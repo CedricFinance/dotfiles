@@ -1,0 +1,52 @@
+[user]
+	name = Cedric Finance
+
+[alias]
+	st = status
+	pf = push --force-with-lease
+	co = checkout
+	fp = fetch --prune
+	diffc = diff --cached
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset) %C(bold blue)%GS%C(reset)' --all
+	cane = commit --amend --no-edit
+	rim = rebase -i master
+	b = branch
+	cd = "!d=\"$(date -R -r \"$1\")\" && shift && \
+                git diff-index --cached --quiet HEAD --ignore-submodules -- && \
+                GIT_COMMITTER_DATE=\"$d\" git commit --amend -C HEAD --date \"$d\"" \
+                || echo >&2 "error: date change failed: index not clean!"
+
+[core]
+	pager = delta
+	quotepath = false
+	excludesfile = /Users/c.finance/.gitignore_global
+	precomposeUnicode = true
+	commitGraph = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
+	autosquash = true
+
+[gc]
+	writeCommitGraph = true
+
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+    syntax-theme = Monokai Extended
+
+
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+	path = ~/.gitconfig-perso
+
+[includeIf "gitdir:~/Perso/"]
+	path = ~/.gitconfig-perso
+
+[includeIf "gitdir:~/workspace/"]
+	path = ~/.gitconfig-pro
