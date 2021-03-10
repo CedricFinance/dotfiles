@@ -1,0 +1,11 @@
+{
+    "http-basic": {
+        "{{ trimPrefix "https://" (first (onepassword "akuuub4uynd57lfir5mmfzcs2m").overview.URLs).u }}": {
+            "username": "{{ (onepasswordDetailsFields "akuuub4uynd57lfir5mmfzcs2m").username.value }}",
+            "password": "{{ (onepasswordDetailsFields "akuuub4uynd57lfir5mmfzcs2m").password.value }}"
+        }
+    },
+    "github-oauth": {
+        "github.com": "{{ (onepasswordDetailsFields "wntdwgh6x5cqdbw5xxwy5ty7na").password.value }}"
+    }
+}
