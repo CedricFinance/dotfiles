@@ -1,0 +1,38 @@
+{
+    "sesterce_monolog" : {
+        "title" : "Monolog format",
+        "description" : "Monolog format",
+        "regex" : {
+            "basic" : {
+                "pattern" : "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\] (?<component>\\w+)\\.(?<level>\\w+): (?<message>[^{]+)(?<extra>\\{[^}]*\\})$"
+            },
+            "two" : {
+                "pattern" : "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\] (?<component>\\w+)\\.(?<level>\\w+): (?<message>[^{]+)(?<extra>\\{.*\\}) (?<extra2>\\{.*\\})$"
+            }
+        },
+        "level-field" : "level",
+        "level" : {
+	    "info": "INFO",
+            "error" : "ERROR",
+            "warning" : "WARNING"
+        },
+        "value" : {
+            "component" : {
+                "kind" : "string",
+                "identifier" : true
+            },
+	    "message": {
+	        "kind": "string"
+	    },
+	    "extra": {
+		"kind": "json"
+	    },
+	    "extra2": { "kind": "json" }
+        },
+        "sample" : [
+            {
+                "line" : "[2019-04-03 08:29:21] api.INFO: API request {}"
+            }, { "line" :"[2019-04-03 08:29:21] api.INFO: API request {\"a\":\"a\"} {\"b\":\"a\"}" }
+        ]
+    }
+}
