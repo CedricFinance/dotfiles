@@ -1,3 +1,4 @@
+{{ if (eq .chezmoi.os "darwin") }}
 {
     "sesterce_monolog" : {
         "title" : "Monolog format",
@@ -36,3 +37,4 @@
         ]
     }
 }
+{{ end }}

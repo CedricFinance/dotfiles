@@ -19,7 +19,7 @@
 [core]
 	pager = delta
 	quotepath = false
-	excludesfile = /Users/c.finance/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	precomposeUnicode = true
 	commitGraph = true
 
@@ -41,7 +41,7 @@
     minus-color = "#340001"
     syntax-theme = Monokai Extended
 
-
+{{ if .work }}
 [includeIf "gitdir:~/.local/share/chezmoi/"]
 	path = ~/.gitconfig-perso
 
@@ -50,3 +50,7 @@
 
 [includeIf "gitdir:~/workspace/"]
 	path = ~/.gitconfig-pro
+{{ else }}
+[include]
+	path = ~/.gitconfig-perso
+{{ end }}

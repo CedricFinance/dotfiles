@@ -1,0 +1,5 @@
+{{- $work := promptBool "Is it your work machine" -}}
+{{ $persoEmail := promptString "What's your personal email" }}
+[data]
+    work = {{ $work }}
+    perso_email = "{{ $persoEmail }}"

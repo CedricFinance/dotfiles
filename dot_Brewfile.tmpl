@@ -1,3 +1,4 @@
+{{ if (eq .chezmoi.os "darwin") }}
 tap "aylei/tap"
 tap "bradyjoslin/sharewifi"
 tap "cedricfinance/tap"
@@ -210,3 +211,4 @@ cask "vnc-viewer"
 cask "vysor"
 cask "wwdc"
 cask "xquartz"
+{{ end }}
