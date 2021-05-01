@@ -1,0 +1,6 @@
+{{- if (eq .chezmoi.os "linux") -}}
+[TimeZones]
+LocalZone=Europe/Paris
+ZoneinfoDir=/usr/share/zoneinfo
+Zonetab=/usr/share/zoneinfo/zone.tab
+{{ end -}}
