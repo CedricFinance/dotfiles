@@ -207,7 +207,7 @@ eval "$(fnm env)"
 export PATH="/usr/local/opt/helm@2/bin:$PATH"
 
 #k8s
-source <(kubectl completion zsh)
+if type "kubectl" > /dev/null; then source <(kubectl completion zsh); fi
 
 #export GPG_TTY="$(tty)"
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
