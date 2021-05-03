@@ -200,7 +200,7 @@ if [ -f "$HOME/dev/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/dev/goo
 # To customize prompt, run `p9k_configure` or edit ~/.p10k.zsh.
 source ~/.p10k.zsh
 
-source $HOME/.rvm/scripts/rvm
+if [ -f "$HOME/.rvm/scripts/rvm" ]; then . "$HOME/.rvm/scripts/rvm"; fi
 
 # fnm
 eval "$(fnm env)"
