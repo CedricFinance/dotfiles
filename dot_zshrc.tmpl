@@ -225,7 +225,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-source $HOME/.config/broot/launcher/bash/br
+if [ -f "$HOME/.config/broot/launcher/bash/br" ]; then . "$HOME/.config/broot/launcher/bash/br"; fi
 {{- else -}}
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
