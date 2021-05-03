@@ -121,7 +121,8 @@ P9K_IGNORE_VAR_WARNING=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   docker git autojump thefuck composer node
-  golang zsh-completions
+  golang
+  #zsh-completions
 )
 
 setopt  HIST_IGNORE_ALL_DUPS
@@ -177,6 +178,10 @@ source ~/.zplug/init.zsh
 zplug 'wfxr/forgit'
 #zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
+zplug 'zsh-users/zsh-completions'
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
