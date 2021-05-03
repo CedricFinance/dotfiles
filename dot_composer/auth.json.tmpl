@@ -1,4 +1,4 @@
-{{ if .work }}
+{{ if .work -}}
 {
     "http-basic": {
         "{{ trimPrefix "https://" (first (onepassword "akuuub4uynd57lfir5mmfzcs2m").overview.URLs).u }}": {
